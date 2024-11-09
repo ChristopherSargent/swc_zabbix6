@@ -9,7 +9,7 @@
 1. ssh user@IP
 2. sudo -i 
 3. git clone 
-4. cd swc_zabbix
+4. cd swc_zabbix6
 5. vim .env
 * Update password
 ```
@@ -18,15 +18,16 @@ POSTGRES_USER=zabbix
 POSTGRES_PASSWORD=password
 POSTGRES_DB=zabbix
 ```
-6. ./deploy_zabbix6.sh
+6. ./zabbix6_deploy.sh
 * Verify .sh scripts are executable chmod +x *.sh
 7. docker ps 
 ```
-CONTAINER ID   IMAGE                                             COMMAND                  CREATED         STATUS         PORTS                                                                            NAMES
-9db1430112a1   zabbix/zabbix-web-nginx-pgsql:alpine-6.0-latest   "docker-entrypoint.sh"   7 minutes ago   Up 7 minutes   0.0.0.0:80->8080/tcp, :::80->8080/tcp, 0.0.0.0:443->8443/tcp, :::443->8443/tcp   zabbix-web-nginx-pgsql
-6cf347bd5485   zabbix/zabbix-server-pgsql:alpine-6.0-latest      "/sbin/tini -- /usr/…"   7 minutes ago   Up 7 minutes   0.0.0.0:10051->10051/tcp, :::10051->10051/tcp                                    zabbix-server-pgsql
-8f3084052462   zabbix/zabbix-snmptraps:alpine-6.0-latest         "/usr/sbin/snmptrapd…"   7 minutes ago   Up 7 minutes   0.0.0.0:162->1162/udp, :::162->1162/udp                                          zabbix-snmptraps
-66d9635c0331   postgres:latest                                   "docker-entrypoint.s…"   7 minutes ago   Up 7 minutes   5432/tcp                                                                         postgres-server
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED         STATUS         PORTS                                                                                NAMES
+943a0b13ebd9   zabbix/zabbix-web-nginx-pgsql:alpine-6.0-latest   "docker-entrypoint.sh"   8 minutes ago   Up 5 minutes   0.0.0.0:80->8080/tcp, [::]:80->8080/tcp, 0.0.0.0:443->8443/tcp, [::]:443->8443/tcp   zabbix-web-nginx-pgsql
+72a9617e5446   zabbix/zabbix-server-pgsql:alpine-6.0-latest      "/sbin/tini -- /usr/…"   8 minutes ago   Up 8 minutes   0.0.0.0:10051->10051/tcp, :::10051->10051/tcp                                        zabbix-server-pgsql
+70668d880d10   zabbix/zabbix-snmptraps:alpine-6.0-latest         "/usr/sbin/snmptrapd…"   8 minutes ago   Up 8 minutes   0.0.0.0:162->1162/udp, [::]:162->1162/udp                                            zabbix-snmptraps
+f6639ad51548   postgres:16.2                                     "docker-entrypoint.s…"   8 minutes ago   Up 8 minutes   5432/tcp                                                                             postgres-server
+
 ```
 8. http://172.18.0.20
 
