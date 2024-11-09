@@ -1,5 +1,5 @@
 ![alt text](swclogo.jpg)
-# swc_zabbix6
+### swc_zabbix6
 
 * This repository contains a script to deploy Zabbix 6.0 LTS via docker containers. For any additional details or inquiries, please contact me at christopher.sargent@sargentwalker.io.
 * Tested on Ubuntu 22.04 VM
