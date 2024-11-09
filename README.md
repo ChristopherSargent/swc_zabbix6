@@ -5,7 +5,7 @@
 * Tested on Ubuntu 22.04 VM
 * [Zabbix Documentation](https://www.zabbix.com/documentation/6.0/en/manual/installation/containers)
 
-# Deploy Zabbix 6.0 LTS
+### Deploy Zabbix 6.0 LTS
 1. ssh user@IP
 2. sudo -i 
 3. git clone 
@@ -33,7 +33,7 @@ f6639ad51548   postgres:16.2                                     "docker-entrypo
 
 ![Screenshot](resources/zabbixhttp.JPG)
 
-# Create certs and dhparam for SSL/TLS
+### Create certs and dhparam for SSL/TLS
 1. openssl req -newkey rsa:2048 -nodes -keyout /etc/ssl/nginx/ssl.key -x509 -days 365 -out /etc/ssl/nginx/ssl.crt
 2. openssl dhparam -out /etc/ssl/nginx/dhparam.pem 2048
 3. chmod 444 /etc/ssl/nginx/ssl.key
